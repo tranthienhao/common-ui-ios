@@ -8,8 +8,13 @@
 import SwiftUI
 
 public struct SpacerView: View {
-    public var width: CGFloat = 1
-    public var height: CGFloat = 1
+    private var width: CGFloat
+    private var height: CGFloat
+    
+    public init(height: CGFloat = 1, width: CGFloat = 1) {
+        self.width = width
+        self.height = height
+    }
     
     public var body: some View {
         Rectangle().fill(Color.clear)

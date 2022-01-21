@@ -9,8 +9,13 @@ import Kingfisher
 import SwiftUI
 
 public struct AvatarView: View {
-    public var avatar: String
-    public var size: CGFloat
+    private let avatar: String
+    private let size: CGFloat
+    
+    public init(avatar: String, size: CGFloat) {
+        self.avatar = avatar
+        self.size = size
+    }
     
     public var body: some View {
         ZStack {

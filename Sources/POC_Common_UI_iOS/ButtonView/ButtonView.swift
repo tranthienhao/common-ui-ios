@@ -8,22 +8,52 @@
 import SwiftUI
 
 public struct ButtonView: View {
-    public var title: String
-    public var backgroundColor: Color = Color.primaryButtonColor
-    public var highlightColor: Color = Color.primaryHighlightColor
-    public var disabledColor: Color = Color.primaryDisableColor
-    public var textSize: CGFloat = 17
-    public var textColor: Color = Color.primaryTextColor
+    private var title: String
+    private var backgroundColor: Color
+    private var highlightColor: Color
+    private var disabledColor: Color
+    private var textSize: CGFloat
+    private var textColor: Color
     
-    public var cornerRadius: CGFloat = 8
-    public var border: Color?
-    public var width: CGFloat?
-    public var height: CGFloat = 44
-    public var padding: EdgeInsets?
-    public var disabled: Bool = false
-    public var action: () -> Void
+    private var cornerRadius: CGFloat
+    private var border: Color?
+    private var width: CGFloat?
+    private var height: CGFloat
+    private var padding: EdgeInsets?
+    private var disabled: Bool = false
+    private var action: () -> Void
     
     @SwiftUI.State private var isPressed = false
+    
+    public init(
+        title: String,
+        backgroundColor: Color = Color.primaryButtonColor,
+        highlightColor: Color = Color.primaryHighlightColor,
+        disabledColor: Color = Color.primaryDisableColor,
+        textSize: CGFloat = 17,
+        textColor: Color = Color.primaryTextColor,
+        cornerRadius: CGFloat = 8,
+        border: Color? = nil,
+        width: CGFloat?,
+        height: CGFloat = 44,
+        padding: EdgeInsets?,
+        disabled: Bool = false,
+        action: @escaping () -> Void
+    ) {
+        self.title = title
+        self.backgroundColor = backgroundColor
+        self.highlightColor = highlightColor
+        self.disabledColor = disabledColor
+        self.textSize = textSize
+        self.textColor = textColor
+        self.cornerRadius = cornerRadius
+        self.border = border
+        self.width = width
+        self.height = height
+        self.padding = padding
+        self.disabled = disabled
+        self.action = action
+    }
     
     public var body: some View {
         ZStack {
