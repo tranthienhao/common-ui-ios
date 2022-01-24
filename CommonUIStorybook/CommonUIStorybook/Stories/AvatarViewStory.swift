@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import POC_Common_UI_iOS
 
 struct AvatarViewStory: View {
     var body: some View {

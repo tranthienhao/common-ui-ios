@@ -13,9 +13,6 @@ let package = Package(
         .library(
             name: "POC_Common_UI_iOS",
             targets: ["POC_Common_UI_iOS"]),
-        .library(
-            name: "POC_Storybook",
-            targets: ["POC_Storybook"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,12 +24,8 @@ let package = Package(
         .target(
             name: "POC_Common_UI_iOS",
             dependencies: [
-                "POC_Storybook",
                 "Kingfisher"
             ]),
-        .target(
-            name: "POC_Storybook",
-            dependencies: []),
         .testTarget(
             name: "POC_Common_UI_iOSTests",
             dependencies: ["POC_Common_UI_iOS"]),
